@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Опрос про котиков</title>
+    <link
+      rel="shortcut icon"
+      href="https://cdn-icons-png.flaticon.com/512/1864/1864514.png"
+      type="image/png"
+    />
+    <style>
+        input:required:valid {
+            border-color: green;
+        }
+    </style>
+  </head>
+  <body>
+    <h1>Приветствуем всех любителей котиков!</h1>
+    <h2>Предлагаем Вам поучаствовать в нашем опросе</h2>
+    <img
+      src="https://i.pinimg.com/564x/cc/c4/06/ccc406dbafc09f3ac2f066a494af21e7.jpg"
+      height="200"
+      alt="Котик"
+    />
+    <form>
+      <fieldset>
+        <legend><b>Основная информация</b></legend>
+        <div>
+          <label for="name">Кличка питомца<span style="color:red">*</span> <input type="text" id="name" placeholder="Барсик" maxlength="15" required/></label><br>
+                  </div>
+        <div>
+          <label for="name2">Имя владельца<span style="color:red">*</span> <input type="text" id="name2" placeholder="Ольга" maxlength="10" required/></label><br>
+                  </div>
+        <div>
+          <label for="email">Контактные данные <input type="email" id="email" placeholder="ivanivanov@yandex.ru" optional/></label><br>
+                  </div>
+      </fieldset>
+      <h4>Выберите породу питомца</h4>
+      <div>
+        <select>
+          <option value="first option">Мейн-кун</option>
+          <option value="second option">Британец</option>
+          <option value="third option">Сфинкс</option>
+        </select>
+      </div>
+      <h4>Укажите, чем питается ваш кот</h4>
+      <div>
+        <input type="checkbox" id="checkbox1" />
+        <label for="checkbox1">Сухой корм</label>
+      </div>
+      <div>
+        <input type="checkbox" id="checkbox2" />
+        <label for="checkbox2">Влажный корм</label>
+      </div>
+      <div>
+        <input type="checkbox" id="checkbox3" />
+        <label for="checkbox3">Натуральный корм</label>
+      </div>
+      <h4>Укажите пол питомца</h4>
+      <div>
+        <input type="radio" id="radio1" name="sex" />
+        <label for="radio1">Самец</label>
+      </div>
+      <div>
+        <input type="radio" id="radio2" name="sex" />
+        <label for="radio2">Самка</label>
+      </div>
+      <p><b>Ниже Вы можете поделиться забавной историей о Вашем питомце</b></p>
+      <div>
+        <textarea placeholder="Добавьте комментарий" cols="40"></textarea>
+      </div>
+      <div>Прикрепите фотографию Вашего кота <input type="file" /></div>
+      <button>Сохранить</button>
+    </form>
+  </body>
+</html>
