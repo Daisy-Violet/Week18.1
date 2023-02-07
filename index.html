@@ -79,9 +79,11 @@
     let catName = document.getElementById('cat-name');
     let catOwner = document.getElementById('owner');
     let ownerEmail = document.getElementById('email');
-    let catBreed = document.getElementsByClassName('.breed');
-    let catMeal = document.querySelectorAll('input.checkbox:checked');
-    let catSex = document.getElementsByClassName('.sex');
+    let catBreed = document.querySelectorAll('.breed');
+    let catMeal = document.querySelectorAll('.meal');
+    console.dir(catMeal);
+    let catMealChecked = [];
+    let catSex = document.querySelectorAll('.sex');
     let formBtn = document.querySelector('.form__btn');
 
       class Cat {
@@ -95,7 +97,13 @@
   }
 }
 formBtn.addEventListener('click', () => {
-  let myCat = new Cat ( catName.value, catOwner.value, ownerEmail.value, catBreed.value, catMeal.value, catSex.value);
+  catMeal.forEach((item) => {
+        if (catMeal.checked) {
+        catMealChecked.push(catMeal.value);
+    }
+    });
+
+  let myCat = new Cat ( catName.value, catOwner.value, ownerEmail.value, catBreed.value, catMealChecked.value, catSex.value);
   console.log(myCat);
 })
 
