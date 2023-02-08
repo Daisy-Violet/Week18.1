@@ -80,10 +80,11 @@
     let catOwner = document.getElementById('owner');
     let ownerEmail = document.getElementById('email');
     let catBreed = document.querySelectorAll('.breed');
+    let catBreedSelected = [];
     let catMeal = document.querySelectorAll('.meal');
-    console.dir(catMeal);
     let catMealChecked = [];
     let catSex = document.querySelectorAll('.sex');
+    let catSexChecked = [];
     let formBtn = document.querySelector('.form__btn');
 
       class Cat {
@@ -97,13 +98,28 @@
   }
 }
 formBtn.addEventListener('click', () => {
-  catMeal.forEach((item) => {
-        if (catMeal.checked) {
-        catMealChecked.push(catMeal.value);
-    }
-    });
+  catBreed.forEach((item) => {
+        if (item.selected) {
+          catBreedSelected.push(item.value);
+        }
+      });
+      let catBreedFinallySelected = catBreedSelected.toString();
 
-  let myCat = new Cat ( catName.value, catOwner.value, ownerEmail.value, catBreed.value, catMealChecked.value, catSex.value);
+      catMeal.forEach((item) => {
+        if (item.checked) {
+          catMealChecked.push(item.value);
+        }
+      });
+      let catMealFinallyChecked = catMealChecked.toString();
+
+      catSex.forEach((item) => {
+        if (item.checked) {
+          catSexChecked.push(item.value);
+        }
+      });
+      let catSexFinallyChecked = catSexChecked.toString();
+
+  let myCat = new Cat ( catName.value, catOwner.value, ownerEmail.value, catBreedFinallySelected, catMealFinallyChecked, catSexFinallyChecked);
   console.log(myCat);
 })
 
